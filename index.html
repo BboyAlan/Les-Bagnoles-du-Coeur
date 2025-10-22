@@ -14,19 +14,34 @@
       body { font-family: 'Poppins', sans-serif; }
       /* si besoin d'une couleur personnalisée, on peut la laisser ici */
       .bg-graylight { background-color: #f3f4f6; }
-      /* ajoute ici d'autres classes personnalisées si besoin */
+      /* espace pour éviter que les ancres (#contact...) soient cachées par la navbar fixe */
+      :root { --header-offset-desktop: 6rem; --header-offset-mobile: 5rem; }
+      [id] { scroll-margin-top: var(--header-offset-desktop); }
+      @media (max-width: 768px) { [id] { scroll-margin-top: var(--header-offset-mobile); } }
+
+      /* animation / taille du logo lors du scroll */
+      header{ transition: padding .2s ease, background-color .2s ease, box-shadow .2s ease; }
+      header img{ transition: width .2s ease, height .2s ease; display:block; }
+      /* état réduit */
+      header.scrolled{ /* on peut conserver bg-gradient mais réduire padding */ }
+      header.scrolled img{ width:4rem; height:4rem; } /* taille réduite quand on scroll */
+      @media (min-width:768px){
+        header img{ width:6rem; height:6rem; }        /* logo normal desktop */
+        header.scrolled img{ width:5rem; height:5rem; } /* logo réduit desktop */
+      }
     </style>
   </head>
 
-  <body class="overflow-x-hidden">
-    <!-- Navbar -->
-    <header class="bg-gradient-to-r from-orange-500 to-yellow-400 shadow-lg sticky top-0 z-50">
-      <nav class="flex items-center justify-between max-w-6xl mx-auto px-6 py-4">
-        <div class="flex items-center gap-3 text-white text-xl font-bold">
-          <img src="logo.png" alt="Logo" class="w-12 h-12" />
-          Les Bagnoles du Cœur
+  <body class="overflow-x-hidden pt-24">
+    <!-- Navbar (fixée en haut) -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-orange-500 to-yellow-400 shadow-lg">
+      <nav class="flex items-center justify-between max-w-6xl mx-auto px-8 py-3 md:py-6">
+        <div class="flex items-center gap-4 text-white font-bold">
+          <!-- plus petit sur mobile, plein format sur desktop -->
+          <img src="logo.png" alt="Logo" class="w-24 h-24 md:w-32 md:h-32 object-contain" />
+          <span class="hidden md:inline text-2xl">Les Bagnoles du Cœur</span>
         </div>
-        <ul class="flex gap-6 text-white font-medium">
+        <ul class="flex gap-6 text-white font-medium text-lg">
           <li><a href="#about" class="hover:underline focus:outline-none focus:ring-2 focus:ring-orange">Qui sommes-nous ?</a></li>
           <li><a href="#project" class="hover:underline focus:outline-none focus:ring-2 focus:ring-orange">Le projet</a></li>
           <li><a href="#gallery" class="hover:underline focus:outline-none focus:ring-2 focus:ring-orange">Galerie</a></li>
@@ -36,27 +51,29 @@
       </nav>
     </header>
 
-    <!-- Hero -->
-    <section class="text-center py-24 bg-gradient-to-r from-blue-500 to-green-400 text-white relative overflow-hidden">
+    <!-- Hero (prend la hauteur de la fenêtre moins la hauteur de la navbar 4rem) -->
+    <section class="text-center bg-gradient-to-r from-blue-500 to-green-400 text-white relative overflow-hidden min-h-[calc(100vh-6rem)] flex items-center">
       <!-- <div class="absolute inset-0 animate-pulse opacity-10 bg-gradient-to-br from-orange via-yellow to-green"></div>-->
-      <h1 class="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg">Devenez Partenaire des Bagnoles du Cœur !</h1>
-      <p class="text-xl md:text-2xl mb-8 font-medium">Une course de caisses à savon étudiante et solidaire à Aix la Duranne<br><span class="font-bold text-yellow-300">30 mai 2026</span></p>
-      <a href="#contact" class="bg-orange-500 text-white px-10 py-5 rounded-full font-semibold text-xl shadow-lg hover:bg-yellow-400 hover:text-gray-800 transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-orange-500">Nous contacter</a>
-      <div class="mt-12 flex flex-col md:flex-row justify-center gap-8">
-        <div class="bg-white bg-opacity-10 rounded-xl p-6 shadow-lg flex flex-col items-center">
-          <span class="text-4xl mb-2">🏁</span>
-          <span class="font-bold text-lg">Course solidaire</span>
-          <span class="text-sm mt-2">Tous les bénéfices reversés à une association caritative.</span>
-        </div>
-        <div class="bg-white bg-opacity-10 rounded-xl p-6 shadow-lg flex flex-col items-center">
-          <span class="text-4xl mb-2">👨‍🎓</span>
-          <span class="font-bold text-lg">Projet étudiant</span>
-          <span class="text-sm mt-2">Organisé par des élèves ingénieurs du CESI Aix-en-Provence.</span>
-        </div>
-        <div class="bg-white bg-opacity-10 rounded-xl p-6 shadow-lg flex flex-col items-center">
-          <span class="text-4xl mb-2">🎉</span>
-          <span class="font-bold text-lg">Ambiance festive</span>
-          <span class="text-sm mt-2">Animations, food trucks, musique et surprises pour tous !</span>
+      <div class="w-full">
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg">Devenez Partenaire des Bagnoles du Cœur !</h1>
+        <p class="text-xl md:text-2xl mb-8 font-medium">Une course de caisses à savon étudiante et solidaire à Aix la Duranne<br><span class="font-bold text-yellow-300">30 mai 2026</span></p>
+        <a href="#contact" class="bg-orange-500 text-white px-10 py-5 rounded-full font-semibold text-xl shadow-lg hover:bg-yellow-400 hover:text-gray-800 transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-orange-500">Nous contacter</a>
+        <div class="mt-12 flex flex-col md:flex-row justify-center gap-8">
+          <div class="bg-white bg-opacity-10 rounded-xl p-6 shadow-lg flex flex-col items-center">
+            <span class="text-4xl mb-2">🏁</span>
+            <span class="font-bold text-lg">Course solidaire</span>
+            <span class="text-sm mt-2">Tous les bénéfices reversés à une association caritative.</span>
+          </div>
+          <div class="bg-white bg-opacity-10 rounded-xl p-6 shadow-lg flex flex-col items-center">
+            <span class="text-4xl mb-2">👨‍🎓</span>
+            <span class="font-bold text-lg">Projet étudiant</span>
+            <span class="text-sm mt-2">Organisé par des élèves ingénieurs du CESI Aix-en-Provence.</span>
+          </div>
+          <div class="bg-white bg-opacity-10 rounded-xl p-6 shadow-lg flex flex-col items-center">
+            <span class="text-4xl mb-2">🎉</span>
+            <span class="font-bold text-lg">Ambiance festive</span>
+            <span class="text-sm mt-2">Animations, food trucks, musique et surprises pour tous !</span>
+          </div>
         </div>
       </div>
     </section>
@@ -160,7 +177,7 @@
           </div>
         </div>
       </div>
-      <img src="./src/assets/dino-megaphone.png" alt="Dino megaphone" class="absolute right-10 bottom-10 w-40 md:w-56 animate-bounce" />
+      <img src="./src/assets/Microphone.png" alt="Dino megaphone" class="absolute right-10 bottom-10 w-40 md:w-56 animate-bounce" />
     </section>
 
     <!-- Contact -->
@@ -199,5 +216,20 @@
       <span class="mt-2">Fait avec ❤️ par l’équipe projet    © 2025 Les Bagnoles du Cœur</span>
     </footer>
 
+    <!-- script : réduis la navbar au scroll et remet en grand en haut -->
+    <script>
+      (function(){
+        const header = document.querySelector('header');
+        if(!header) return;
+        const SHRINK_Y = 60; // px, seuil pour déclencher le shrink
+        function onScroll(){
+          if(window.scrollY > SHRINK_Y) header.classList.add('scrolled');
+          else header.classList.remove('scrolled');
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        // run once to set correct state si page ouverte déjà scrollée
+        onScroll();
+      })();
+    </script>
   </body>
 </html>
