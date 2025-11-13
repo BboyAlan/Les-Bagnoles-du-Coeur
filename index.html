@@ -164,7 +164,7 @@
       <h2 class="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Le projet</h2>
       <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         <div>
-          <p class="text-lg mb-4">
+          <p class="text-lg mb-4 align-items: text-left">
             Nous organisons une <strong>course de caisses à savon</strong> ouverte à tous : étudiants, familles, associations et entreprises locales. Les participants construisent leur propre véhicule, décoré selon leur imagination, et s’affrontent dans une ambiance conviviale et festive.
           </p>
           <ul class="text-left space-y-2 text-base">
@@ -367,6 +367,21 @@
         onScroll();
       })();
     </script>
+
+    <!-- Lightbox pour afficher l'image en grand -->
+<div id="lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999;">
+  <img id="lightbox-img" src="plan_route.png" alt="Course en grand" style="max-width:90vw; max-height:90vh; border-radius:1rem; box-shadow:0 0 40px #000;">
+</div>
+<script>
+  // Ouvre la lightbox au clic sur l'image
+  document.querySelector('img[src="plan_route.png"]').addEventListener('click', function() {
+    document.getElementById('lightbox').style.display = 'flex';
+  });
+  // Ferme la lightbox au clic n'importe où
+  document.getElementById('lightbox').addEventListener('click', function() {
+    this.style.display = 'none';
+  });
+</script>
   </body>
 </html>
 
