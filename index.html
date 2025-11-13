@@ -43,8 +43,8 @@
         </div>
         <ul class="flex gap-6 text-white font-medium text-lg">
           <li><a href="#about" class="hover:underline focus:outline-none focus:ring-2 focus:ring-orange">Qui sommes-nous ?</a></li>
+          <li><a href="#association" class="hover:underline focus:outline-none focus:ring-2 focus:ring-orange">Association</a></li>
           <li><a href="#project" class="hover:underline focus:outline-none focus:ring-2 focus:ring-orange">Le projet</a></li>
-          <li><a href="#gallery" class="hover:underline focus:outline-none focus:ring-2 focus:ring-orange">Galerie</a></li>
           <li><a href="#support" class="hover:underline focus:outline-none focus:ring-2 focus:ring-orange">Nous soutenir</a></li>
           <li><a href="#contact" class="hover:underline focus:outline-none focus:ring-2 focus:ring-orange">Contact</a></li>
         </ul>
@@ -79,29 +79,89 @@
     </section>
 
     <!-- Qui sommes-nous -->
-    <section id="about" class="py-20 bg-white text-center relative">
-      <h2 class="text-4xl font-bold text-blue mb-8">Qui sommes-nous ?</h2>
-      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <p class="text-lg mb-4">Nous sommes une équipe d’étudiants passionnés, solidaires et créatifs, réunis autour d’un projet humain et original. Notre objectif : fédérer la jeunesse autour de valeurs de partage, d’innovation et d’engagement local.</p>
-          <ul class="text-left space-y-2 text-base">
-            <li>• <span class="font-semibold">Solidarité :</span> Soutenir une association caritative locale.</li>
-            <li>• <span class="font-semibold">Esprit d’équipe :</span> Collaboration entre étudiants de différentes filières.</li>
-            <li>• <span class="font-semibold">Créativité :</span> Conception et décoration des caisses à savon.</li>
-            <li>• <span class="font-semibold">Engagement :</span> Sensibilisation à la sécurité routière et à l’environnement.</li>
-          </ul>
-        </div>
-        <div class="flex flex-col items-center gap-4">
-          <img src="./src/assets/team.jpg" alt="L'équipe" class="rounded-xl shadow-lg w-64 h-40 object-cover" />
-          <blockquote class="italic text-gray-600 text-sm">« Un projet qui nous rassemble et nous fait grandir »</blockquote>
+    <section id="about" class="py-20 bg-white text-gray-800">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <!-- Visuel -->
+          <div class="relative">
+            <div class="rounded-2xl overflow-hidden shadow-xl">
+              <img src="./src/assets/team.jpg" alt="L'équipe" class="w-full h-80 object-cover transform hover:scale-105 transition-transform duration-500"/>
+            </div>
+            <div class="absolute -bottom-6 left-6 bg-white rounded-full p-4 shadow-md flex items-center gap-3">
+              <div class="bg-orange-100 text-orange-600 rounded-full p-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h8m-8 4h6"/>
+                </svg>
+              </div>
+              <div class="text-left">
+                <div class="text-sm text-gray-500">Équipe</div>
+                <div class="font-semibold">Étudiants CESI Aix</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Texte & valeurs -->
+          <div class="space-y-6">
+            <h2 class="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Qui sommes‑nous ?</h2>
+            <p class="text-lg text-gray-600">Une équipe d'étudiants engagés qui organise une course solidaire de caisses à savon. Nous mixons créativité, sécurité et solidarité pour rassembler la communauté locale autour d'un événement festif.</p>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="bg-gray-50 rounded-xl p-5 shadow-sm flex gap-4 items-start">
+                <div class="flex-shrink-0 bg-blue-50 p-3 rounded-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zM6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-sm text-gray-500">Solidarité</div>
+                  <div class="font-semibold">Bénévolat & collecte</div>
+                </div>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-5 shadow-sm flex gap-4 items-start">
+                <div class="flex-shrink-0 bg-green-50 p-3 rounded-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6M5 21h14"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-sm text-gray-500">Sécurité</div>
+                  <div class="font-semibold">Normes, encadrement</div>
+                </div>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-5 shadow-sm flex gap-4 items-start">
+                <div class="flex-shrink-0 bg-purple-50 p-3 rounded-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-sm text-gray-500">Créativité</div>
+                  <div class="font-semibold">Designs & décors</div>
+                </div>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-5 shadow-sm flex gap-4 items-start">
+                <div class="flex-shrink-0 bg-yellow-50 p-3 rounded-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-sm text-gray-500">Impact</div>
+                  <div class="font-semibold">Soutien à l'association</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="absolute inset-x-0 bottom-0 h-32 bg-road bg-no-repeat bg-contain opacity-50"></div>
     </section>
 
     <!-- Le projet -->
     <section id="project" class="py-20 bg-gray-100 text-center">
-      <h2 class="text-4xl font-bold text-green mb-8">Le projet</h2>
+      <h2 class="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Le projet</h2>
       <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         <div>
           <p class="text-lg mb-4">
@@ -122,28 +182,104 @@
       <p class="mt-8 font-semibold text-lg">📅 30 mai 2026 • 📍 Aix la Duranne</p>
     </section>
 
-    <!-- Galerie -->
-    <section id="gallery" class="py-20 bg-white text-center">
-      <h2 class="text-4xl font-bold text-orange mb-8">Galerie</h2>
-      <div class="flex flex-wrap justify-center gap-8">
-        <img src="./src/assets/gallery1.jpg" alt="Course 1" class="rounded-xl shadow-lg w-64 h-40 object-cover hover:scale-105 transition" />
-        <img src="./src/assets/gallery2.jpg" alt="Course 2" class="rounded-xl shadow-lg w-64 h-40 object-cover hover:scale-105 transition" />
-        <img src="./src/assets/gallery3.jpg" alt="Course 3" class="rounded-xl shadow-lg w-64 h-40 object-cover hover:scale-105 transition" />
-        <img src="./src/assets/gallery4.jpg" alt="Course 4" class="rounded-xl shadow-lg w-64 h-40 object-cover hover:scale-105 transition" />
-      </div>
-      <div class="mt-10 max-w-3xl mx-auto">
-        <h3 class="text-xl font-semibold text-blue mb-4">Témoignages</h3>
-        <div class="grid md:grid-cols-2 gap-6">
-          <blockquote class="bg-gray-100 rounded-xl p-4 shadow text-left">
-            <span class="font-bold">Lucas (participant) :</span> <span class="italic">« Une expérience inoubliable, pleine de fun et de solidarité ! »</span>
-          </blockquote>
-          <blockquote class="bg-gray-100 rounded-xl p-4 shadow text-left">
-            <span class="font-bold">Sophie (bénévole) :</span> <span class="italic">« Voir autant de sourires pour une bonne cause, c’est magique ! »</span>
-          </blockquote>
+    <!-- Association bénéficiaire -->
+    <section id="association" class="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Notre Cause</h2>
+    <p class="text-center text-gray-600 text-xl mb-16 max-w-3xl mx-auto">Ensemble, soutenons APF France Handicap pour construire une société plus inclusive et accessible à tous.</p>
+    
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Colonne gauche -->
+      <div class="relative">
+        <div class="bg-white rounded-2xl shadow-xl p-8 relative z-10">
+         <img class="site-logo-main" src="https://www.apf-francehandicap.org/themes/custom/customer/images/logo.svg" alt="Association APF France handicap  - Accueil">
+          <br />
+          <br />
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="bg-blue-100 p-3 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">90 ans d'engagement</h3>
+                <p class="text-gray-600">Active depuis 1933, APF France Handicap œuvre sans relâche pour l'inclusion.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="bg-purple-100 p-3 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">Impact National</h3>
+                <p class="text-gray-600">Plus de 100 000 personnes accompagnées chaque année à travers la France.</p>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-200 to-purple-200 transform rotate-3 rounded-2xl"></div>
       </div>
-      <p class="mt-8 text-gray-600">Quelques souvenirs des éditions précédentes</p>
-    </section>
+
+      <!-- Colonne droite -->
+      <div class="space-y-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-orange-500 hover:scale-105 transition-transform">
+          <h3 class="text-2xl font-bold text-orange-500 mb-4">Notre Engagement</h3>
+          <p class="text-gray-600">L'intégralité des bénéfices de la course sera reversée à l'antenne locale d'APF France Handicap pour soutenir leurs actions dans notre région.</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl">
+            <h4 class="font-semibold text-green-700 mb-3">Actions Locales</h4>
+            <ul class="space-y-2">
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">Soutien aux familles</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">Activités inclusives</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+            <h4 class="font-semibold text-blue-700 mb-3">Résultats</h4>
+            <ul class="space-y-2">
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">Matériel adapté</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">Sensibilisation</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="https://www.apf-francehandicap.org/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="inline-block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-bold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all shadow-lg">
+          Découvrir APF France Handicap
+          <span class="ml-2">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Pourquoi nous soutenir -->
     <section id="support" class="py-20 bg-white relative">
@@ -171,13 +307,13 @@
         <div class="mt-16">
           <h3 class="text-xl font-semibold text-blue mb-4">Nos partenaires</h3>
           <div class="flex flex-wrap justify-center gap-6 items-center">
-            <img src="./src/assets/partner1.png" alt="Partenaire 1" class="h-12" />
-            <img src="./src/assets/partner2.png" alt="Partenaire 2" class="h-12" />
-            <img src="./src/assets/partner3.png" alt="Partenaire 3" class="h-12" />
+            <a href=""><img src="partenaire1.png" alt="Partenaire 1" class="h-16" /></a>
+            <a href=""><img src="partenaire2.png" alt="Partenaire 1" class="h-18" /></a>
+            <a href=""><img src="partenaire3.png" alt="Partenaire 1" class="h-16" /></a>
           </div>
         </div>
       </div>
-      <img src="./src/assets/Microphone.png" alt="Dino megaphone" class="absolute right-10 bottom-10 w-40 md:w-56 animate-bounce" />
+      <img src="Microphone.png" alt="Dino megaphone" class="absolute right-10 bottom-10 w-40 md:w-56 animate-bounce" />
     </section>
 
     <!-- Contact -->
