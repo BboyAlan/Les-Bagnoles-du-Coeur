@@ -161,26 +161,40 @@
 
     <!-- Le projet -->
     <section id="project" class="py-20 bg-gray-100 text-center">
-      <h2 class="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Le projet</h2>
-      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <p class="text-lg mb-4 align-items: text-left">
-            Nous organisons une <strong>course de caisses à savon</strong> ouverte à tous : étudiants, familles, associations et entreprises locales. Les participants construisent leur propre véhicule, décoré selon leur imagination, et s’affrontent dans une ambiance conviviale et festive.
-          </p>
-          <ul class="text-left space-y-2 text-base">
-            <li>• <span class="font-semibold">Départ :</span> 10h, avenue du Grand Prix, Aix la Duranne</li>
-            <li>• <span class="font-semibold">Animations :</span> Food trucks, DJ, ateliers enfants, tombola</li>
-            <li>• <span class="font-semibold">Prix :</span> Originalité, rapidité, solidarité</li>
-            <li>• <span class="font-semibold">Association bénéficiaire :</span> Les Restos du Cœur Aix</li>
-          </ul>
-        </div>
-        <div class="flex flex-col items-center gap-4">
-          <img src="plan_route.png" alt="Course" class="rounded-xl shadow-lg w-64 h-40 object-cover" />
-          <iframe class="rounded-xl shadow-lg w-64 h-40" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.857914964585!2d5.363!3d43.505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c98d8e5e6e6e6e%3A0x123456789abcdef!2sAix%20la%20Duranne!5e0!3m2!1sfr!2sfr!4v1660000000000" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-      </div>
-      <p class="mt-8 font-semibold text-lg">📅 30 mai 2026 • 📍 Aix la Duranne</p>
-    </section>
+  <h2 class="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Le projet</h2>
+
+  <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start px-4">
+    <div class="text-left">
+      <p class="text-lg mb-4 text-left">
+        Nous organisons une <strong>course de caisses à savon</strong> ouverte à tous : étudiants, familles, associations et entreprises locales. Les participants construisent leur propre véhicule, décoré selon leur imagination, et s’affrontent dans une ambiance conviviale et festive.
+      </p>
+      <ul class="text-left space-y-2 text-base">
+        <li>• <span class="font-semibold">Départ :</span> 10h, avenue du Grand Prix, Aix la Duranne</li>
+        <li>• <span class="font-semibold">Animations :</span> Food trucks, DJ, ateliers enfants, tombola</li>
+        <li>• <span class="font-semibold">Prix :</span> Originalité, rapidité, solidarité</li>
+        <li>• <span class="font-semibold">Association bénéficiaire :</span> Les Restos du Cœur Aix</li>
+      </ul>
+    </div>
+
+    <div class="flex flex-col items-center gap-4">
+      <!-- image affichée entièrement, responsive (object-contain) -->
+      <img src="plan_route.png" alt="Course" class="rounded-xl shadow-lg w-full max-w-md h-auto object-contain" />
+    </div>
+  </div>
+
+  <!-- date + emplacement (centré) -->
+  <p class="mt-8 font-semibold text-lg text-center">📅 30 mai 2026 • 📍 Aix la Duranne</p>
+
+  <!-- map centrée juste en dessous du paragraphe -->
+  <div class="mt-6 flex justify-center">
+    <iframe
+      class="rounded-xl shadow-lg w-full max-w-md h-64 md:h-80"
+      src="https://www.google.com/maps?q=Route+du+Val+d'Arbois,+Aix-en-Provence&z=15&output=embed"
+      allowfullscreen=""
+      loading="lazy"
+    ></iframe>
+  </div>
+</section>
 
     <!-- Association bénéficiaire -->
     <section id="association" class="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
@@ -261,14 +275,6 @@
               </li>
               <li class="flex items-center gap-2">
                 <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-gray-700">Sensibilisation</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
         <a href="https://www.apf-francehandicap.org/" 
            target="_blank" 
            rel="noopener noreferrer" 
