@@ -12,6 +12,8 @@
     <style>
       /* réglages rapides : police et couleurs personnalisées */
       body { font-family: 'Poppins', sans-serif; }
+      /* smooth scroll pour les ancres */
+      html { scroll-behavior: smooth; }
       /* si besoin d'une couleur personnalisée, on peut la laisser ici */
       .bg-graylight { background-color: #f3f4f6; }
       /* espace pour éviter que les ancres (#contact...) soient cachées par la navbar fixe */
@@ -43,8 +45,8 @@
         </div>
         <ul class="flex gap-6 text-white font-medium text-lg">
           <li><a href="#about" class="hover:underline focus:outline-none focus:ring-2 focus:ring-orange">Qui sommes-nous ?</a></li>
-          <li><a href="#association" class="hover:underline focus:outline-none focus:ring-2 focus:ring-orange">Association</a></li>
           <li><a href="#project" class="hover:underline focus:outline-none focus:ring-2 focus:ring-orange">Le projet</a></li>
+          <li><a href="#association" class="hover:underline focus:outline-none focus:ring-2 focus:ring-orange">Association</a></li>
           <li><a href="#support" class="hover:underline focus:outline-none focus:ring-2 focus:ring-orange">Nous soutenir</a></li>
           <li><a href="#contact" class="hover:underline focus:outline-none focus:ring-2 focus:ring-orange">Contact</a></li>
         </ul>
@@ -373,6 +375,24 @@
         onScroll();
       })();
     </script>
+
+   <script>
+     // Amélioration : gestion du clic sur les liens d'ancrage pour un scroll fluide (fallback/contrôle)
+     document.querySelectorAll('a[href^="#"]').forEach(a => {
+       a.addEventListener('click', function(e){
+         const targetId = this.getAttribute('href').slice(1);
+         if(!targetId) return;
+         const targetEl = document.getElementById(targetId);
+         if(!targetEl) return;
+         e.preventDefault();
+         // scrollIntoView respecte scroll-margin-top défini en CSS
+         targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+         // met le focus pour accessibilité
+         targetEl.setAttribute('tabindex', '-1');
+         targetEl.focus({ preventScroll: true });
+       });
+     });
+   </script>
 
     <!-- Lightbox pour afficher l'image en grand -->
 <div id="lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999;">
